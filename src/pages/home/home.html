@@ -1,6 +1,12 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title text-center>主页</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="open()">
+        <ion-icon id="photo" name='contact'></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
@@ -10,8 +16,15 @@
     This starter project comes with simple tabs-based layout for apps
     that are going to primarily use a Tabbed UI.
   </p>
+  <button (click)="hidetest()">text</button>
+
+  <button (click)="show()">text</button>
+
+  <div id="test">
   <p>
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+</div>
+
 </ion-content>

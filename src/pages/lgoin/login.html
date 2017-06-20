@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar >
+
+
+        <ion-title text-center>用户登录</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
+        <ion-item [class.error]="!username.valid && username.touched">
+            <ion-label>用户名：</ion-label>
+            <ion-input type="tel" placeholder="请输入用户名" value="" [formControl]="username" clearInput=true></ion-input>
+        </ion-item>
+        <div *ngIf="username.hasError('required') && username.touched" class="error-message">* 请输入用户名</div>
+        <div *ngIf="(username.hasError('minlength')||username.hasError('maxlength')||username.hasError('pattern')) && username.touched" class="error-message">* 请输入正确的电话号码</div>
+        <ion-item>
+            <ion-label>密 码：</ion-label>
+            <ion-input type="password" placeholder="请输入密码" value="" [formControl]="password" clearInput=true></ion-input>
+        </ion-item>
+        <div *ngIf="password.hasError('required') && password.touched" class="error-message">* 请输入密码</div>
+        <div *ngIf="(password.hasError('minlength')) && password.touched" class="error-message">* 密码长度最少为六位</div>
+        <button ion-button block color="secondary" type="submit" [disabled]="!loginForm.valid">登录</button>
+
+
+
+    </form>
+    <ion-grid>
+    <ion-row>
+      <ion-col text-center (click)="findPassword()">
+        <button ion-button small clear color="primary">找回密码</button>
+      </ion-col>
+      <ion-col text-center (click)="toRegister()">
+        <button ion-button small clear color="primary">注　册</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
