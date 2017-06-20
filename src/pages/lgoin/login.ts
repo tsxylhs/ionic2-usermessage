@@ -46,8 +46,8 @@ login(value) {
         console.log(data)
       if(data.success === 1){
           // 登录成功
-          console.log(data.flag);
-          console.log(data.result[0]._id);
+     //     console.log(data.flag);
+     //     console.log(data.result[0]._id);
             this.loginStatusService.setUser(data.result[0]);
 
             this.Helper.setAlias(''+data.result[0]._id);
@@ -55,9 +55,9 @@ login(value) {
 
           this.loginStatusService.LogonSucc();
 
-          console.log(data.result[0]);
+
           this.navCtrl.push(HomePage);
-         // this.navCtrl.push(Userpage,data.result[0]);
+
 
       }else{
         console.log('登录失败');
