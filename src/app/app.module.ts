@@ -7,7 +7,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -17,10 +17,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BasicPage } from '../pages/slides/basic/pages';
 import { LoginPage } from '../pages/lgoin/login';
 import { FindPasswordPage } from '../pages/lgoin/find-password/findPasswrod';
-import { Storage } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage';
 import { Helper } from '../providers/jiguang-helper';
 import { NativeService } from '../providers/NativeService';
+import { Camera } from '@ionic-native/camera';
+import { Toast } from '@ionic-native/toast';
+import { File } from '@ionic-native/file';
+import { ImagePicker } from '@ionic-native/image-picker';
 
 
 @NgModule({
@@ -63,7 +66,10 @@ import { NativeService } from '../providers/NativeService';
     LoginStatusService,
      Helper,
      NativeService,
-
+          Camera,
+          Toast,
+          File,
+          ImagePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

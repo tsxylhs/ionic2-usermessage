@@ -1,5 +1,5 @@
-import { HomePage } from './../home/home';
-import { NavController,NavParams } from 'ionic-angular';
+
+import { NavController, NavParams, Platform } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder ,Validators} from '@angular/forms';
 import { LoginStatusService } from '../../providers/login-statusService';
@@ -14,7 +14,7 @@ export class Userpage {
  password:any;
  avatar:any;
 
-  constructor(public navCtrl: NavController, public navprams:NavParams ,public FormBuilder:FormBuilder,public LoginStatusService:LoginStatusService) {
+  constructor(public navCtrl: NavController, public Platform:Platform,public navprams:NavParams ,public FormBuilder:FormBuilder,public LoginStatusService:LoginStatusService) {
  this.updateForm=FormBuilder.group({
     Phone: ['', Validators.required]
 
@@ -29,6 +29,8 @@ export class Userpage {
 
 outsystem(){
   this.LoginStatusService.Exit();
-  this.navCtrl.push(HomePage);
+
+  //this.navCtrl.push(HomePage);
+  this.Platform.exitApp();
 }
 }

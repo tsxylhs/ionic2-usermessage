@@ -51,12 +51,8 @@ login(value) {
             this.loginStatusService.setUser(data.result[0]);
 
             this.Helper.setAlias(''+data.result[0]._id);
-
-
-          this.loginStatusService.LogonSucc();
-
-
-          this.navCtrl.push(HomePage);
+            this.loginStatusService.LogonSucc();
+            this.navCtrl.push(HomePage);
 
 
       }else{

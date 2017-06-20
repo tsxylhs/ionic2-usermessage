@@ -20,11 +20,17 @@
         "@angular/http": "4.1.2",
         "@angular/platform-browser": "4.1.2",
         "@angular/platform-browser-dynamic": "4.1.2",
+        "@ionic-native/camera": "^3.12.1",
         "@ionic-native/core": "3.10.2",
+        "@ionic-native/file": "^3.12.1",
+        "@ionic-native/image-picker": "^3.12.1",
         "@ionic-native/splash-screen": "3.10.2",
         "@ionic-native/status-bar": "3.10.2",
+        "@ionic-native/toast": "^3.12.1",
         "@ionic/storage": "2.0.1",
         "cordova-android": "^6.2.3",
+        "cordova-plugin-camera": "^2.4.1",
+        "cordova-plugin-compat": "^1.1.0",
         "cordova-plugin-console": "^1.0.5",
         "cordova-plugin-device": "^1.1.4",
         "cordova-plugin-jcore": "file:node_modules/cordova-plugin-jcore",
@@ -56,7 +62,8 @@
             "ionic-plugin-keyboard": {},
             "jpush-phonegap-plugin": {
                 "APP_KEY": "afdfad1367076d0343e23907"
-            }
+            },
+            "cordova-plugin-camera": {}
         },
         "platforms": [
             "android"
