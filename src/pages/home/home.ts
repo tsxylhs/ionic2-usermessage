@@ -2,7 +2,7 @@ import { NativeService } from './../../providers/NativeService';
 import { LoginStatusService } from './../../providers/login-statusService';
 import { LoginPage } from './../lgoin/login';
 import { Component } from '@angular/core';
-import { NavController, MenuController, ViewController, viewCtrl } from 'ionic-angular';
+import { NavController, MenuController, ViewController } from 'ionic-angular';
 import * as $ from "jquery";
 import { Userpage } from '../user/user';
 

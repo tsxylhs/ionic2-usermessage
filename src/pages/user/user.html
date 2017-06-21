@@ -34,7 +34,31 @@
     </ion-col>
   </ion-row>
 
-</ion-card>
+
+    <ion-card-header>
+      设置
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item>
+        <ion-icon name='cart' item-start></ion-icon>
+         切换主题
+      </button>
+
+      <button ion-item>
+        <ion-icon name='medical' item-start></ion-icon>
+        清理缓存
+      </button>
+
+      <button ion-item>
+        <ion-icon name='cafe' item-start></ion-icon>
+        关于我们
+      </button>
+
+    </ion-list>
+  </ion-card>
+
+
   <button ion-button color="danger" block (click)="outsystem()">退出登录</button>
 
 </ion-content>
