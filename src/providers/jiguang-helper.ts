@@ -13,6 +13,8 @@ export class Helper {
   constructor(private nativeService: NativeService) {
   }
 
+
+
   initJpush() {
     if (!this.nativeService.isMobile()) {
       return;
