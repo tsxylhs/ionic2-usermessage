@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      编辑个人信息
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">关闭</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>姓名</ion-label>
+        <ion-input type="text" formControlName="userName"></ion-input>
+      </ion-item>
+      <div *ngIf="verifyMessages.userName.errorMsg" class="validation-failed">{{verifyMessages.userName.errorMsg}}</div>
+
+      <!--用户昵称-->
+      <ion-item>
+        <ion-label floating>昵称</ion-label>
+        <ion-input type="text" formControlName="nickName"></ion-input>
+      </ion-item>
+     <div *ngIf="verifyMessages.nickName.errorMsg" class="validation-failed">{{verifyMessages.nickName.errorMsg}}</div>
+      <ion-item>
+        <ion-label floating>电子邮箱</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <div *ngIf="verifyMessages.email.errorMsg" class="validation-failed">{{verifyMessages.email.errorMsg}}</div>
+         <ion-item>
+        <ion-label floating>身份证</ion-label>
+        <ion-input type="tel" formControlName="idCard"></ion-input>
+      </ion-item>
+ <ion-item>
+        <ion-label floating>用户地址</ion-label>
+        <ion-input type="text" formControlName="userAddress"></ion-input>
+      </ion-item>
+     <div *ngIf="verifyMessages.nickName.errorMsg" class="validation-failed">{{verifyMessages.nickName.errorMsg}}</div>
+    </ion-list>
+    <div padding-horizontal>
+      <button type="submit" ion-button block>保 存</button>
+
+    </div>
+  </form>
+</ion-content>

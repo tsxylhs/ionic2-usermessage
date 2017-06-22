@@ -1,3 +1,5 @@
+
+import { MineModule } from './../pages/mine/mine.module';
 import { LoginStatusService } from './../providers/login-statusService';
 import { RegisterPage } from './../pages/lgoin/register/register';
 import { Userpage } from './../pages/user/user';
@@ -43,6 +45,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
   imports: [
     HttpModule,
     BrowserModule,
+    MineModule,
+
    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],

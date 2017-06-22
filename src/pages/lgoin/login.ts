@@ -1,3 +1,4 @@
+import { Mine } from './../mine/mine';
 
 import { RegisterPage } from './register/register';
 import { FindPasswordPage } from './find-password/findPasswrod';
@@ -52,7 +53,7 @@ login(value) {
 
             this.Helper.setAlias(''+data.result[0]._id);
             this.loginStatusService.LogonSucc();
-            this.navCtrl.push(HomePage);
+            this.navCtrl.push(Mine,data.result[0]);
 
 
       }else{
