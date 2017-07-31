@@ -1,0 +1,101 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <form #infoForm="ngForm" (ngSubmit)="onSubmit()">
+      <br>
+      <div class="form-group">
+        <label for="name">驾驶人姓名:</label><br>
+        <input type="text" class="form-control" id="name"
+       required
+       [(ngModel)]="model.name" name="name"
+       #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+                  class="alert alert-danger">
+          姓名为必填项
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="place">车牌号码:</label><br>
+        <select class="form-control" id="place"
+        required
+         [(ngModel)]="model.place" name="place">
+          <option *ngFor="let pla of place" [value]="pla">{{pla}}</option>
+        </select>
+        <input type="text" class="form-control" id="carId" required
+        [(ngModel)]="model.carId" name="carId" value="车牌号"
+          #carId="ngModel">
+        <div [hidden]="carId.valid || carId.pristine"
+                  class="alert alert-danger">
+          carId is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phoneNum">手机号码:</label><br>
+        <input type="text" class="form-control" id="phoneNum" required
+        [(ngModel)]="model.phoneNum" name="phoneNum"
+         #phoneNum="ngModel">
+        <div [hidden]="phoneNum.valid || phoneNum.pristine"
+                  class="alert alert-danger">
+          phoneNum is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="carCardId">驾驶证号:</label><br>
+        <input type="text" class="form-control" id="carCardId" required
+        [(ngModel)]="model.carCardId" name="carCardId"
+         #carCardId="ngModel">
+        <div [hidden]="carCardId.valid || carCardId.pristine"
+                  class="alert alert-danger">
+          carCardId is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="insuranceCompany">投保公司:</label><br>
+        <select class="form-control" id="insuranceCompany"
+        required
+         [(ngModel)]="model.insuranceCompany" name="insuranceCompany">
+          <option *ngFor="let ins of insuranceCompany" [value]="ins">{{ins}}</option>
+        </select>
+      </div>
+      <br>
+      <button ion-button clear type="submit" class="btn btn-success" [disabled]="!infoForm.form.valid">核对信息</button>
+      <button ion-button clear type="button" class="btn btn-default" (click)="newInfomation()">清空表单</button>
+      <!--
+        <button ion-button full type="button" (click)="subInfo()">确认提交</button>
+        -->
+    </form>
+  </div>
+  <div [hidden]="!submitted">
+     <div class="inf">
+      <br>
+      <h2>您填写的信息如下,请确认:</h2>
+      <br>
+     </div>
+      <div class="row">
+        <div class="col-xs-3">驾驶人姓名:</div>
+        <div class="col-xs-9  pull-left">{{ model.name }}</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-3">车牌号码:</div>
+        <div class="col-xs-9 pull-left">{{ model.place }}{{ model.carId }}</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-3">手机号码:</div>
+        <div class="col-xs-9 pull-left">{{ model.phoneNum }}</div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-3">驾驶证号:</div>
+        <div class="col-xs-9 pull-left">{{ model.carCardId }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">投保公司:</div>
+        <div class="col-xs-9 pull-left">{{ model.insuranceCompany }}</div>
+      </div>
+      <br>
+       <button ion-button color="light" color="primary" class="btn btn-primary" (click)="submitted=false">完全正确</button>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-fab color="primary" mini (click)="doExplain()">
+        <ion-icon name="help" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>事故处理-温馨提示-提示拖车</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+     <ion-item>
+      <div>
+      <p><ion-icon name="alert" color="danger"></ion-icon>
+      现场证据交管部门和保险公司
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;均已保留, 请<i style="color:red;">[立即]</i>将车辆<i style="color:red;">[挪]</i>至
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不影响交通的安全地点. 拍照
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后不挪车造成交通拥挤的, 交
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;管部门将由现场民警或使用监
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;控设备非现场予以记录后进行
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;处罚!
+      </p>
+      </div>
+    </ion-item>
+  </ion-list>
+
+    <img [src]="movecar"><br>
+  <div padding> 
+    <button ion-button color="primary" block (click)="toFillMyInfo()">我知道了(跳转没写单车)</button>
+  </div>
+  
+</ion-content>

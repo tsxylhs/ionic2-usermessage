@@ -10,21 +10,30 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <button (click)="hidetest()">text</button>
+<ion-content padding >
+  <div class="div1">
 
-  <button (click)="show()">text</button>
 
-  <div id="test">
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</div>
+<button ion-fab color="primary" text-center class="ion-fab_1" (click)="openStart()">轻微交通事故处理</button>
+  <ion-grid class="ion_grid_1">
+  <ion-row>
+    <ion-col>
 
+       <ion-icon name="car" class="ion-icon_1" (click)="totest()"><br/><p>事故处理</p></ion-icon>
+
+    </ion-col>
+    <ion-col>
+      <ion-icon name="build" class="ion-icon_1"><br/><p>汽车维修</p></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-icon name="help" class="ion-icon_1"><br/><p>事故查询</p></ion-icon>
+    </ion-col>
+    <ion-col>
+       <ion-icon name="pulse" class="ion-icon_1"><br/><p>道路救援</p></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+ </div>
 </ion-content>

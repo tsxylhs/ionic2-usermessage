@@ -1,0 +1,17 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-title>现场自助保险报案</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div padding>
+      <button ion-button color="primary" block (click)="onlineReport()">自助报案</button>
+    </div>
+    <div padding>
+      <button ion-button color="primary" block (click)="phoneReport()">电话报案</button>
+    </div>
+    <div padding>
+      <button ion-button color="primary" block (click)="noReport('top')">不报案</button>
+    </div>
+</ion-content>

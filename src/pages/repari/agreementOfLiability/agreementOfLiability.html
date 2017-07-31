@@ -1,0 +1,91 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-title>生成责任协议书</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+      <ion-card-header text-center class="aa">
+          责任协议书
+      </ion-card-header>
+      <ion-card-content>
+          <div>
+            <div class="inf">
+              <br>
+              <h2>甲方:</h2>
+              <br>
+            </div>
+              <div class="row">
+                <div class="col-xs-3">驾驶人姓名:</div>
+                <div class="col-xs-9  pull-left">{{ model.name }}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-3">车牌号码:</div>
+                <div class="col-xs-9 pull-left">{{ model.place }}{{ model.carId }}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-3">手机号码:</div>
+                <div class="col-xs-9 pull-left">{{ model.phoneNum }}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-3">驾驶证号:</div>
+                <div class="col-xs-9 pull-left">{{ model.carCardId }}</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">投保公司:</div>
+                <div class="col-xs-9 pull-left">{{ model.insuranceCompany }}</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">责任:</div>
+                <div class="col-xs-9 pull-left">{{ result1 }}</div>
+              </div>
+              <br>
+            </div>
+
+            <div>
+            <div>
+              <br>
+              <h2>乙方:</h2>
+              <br>
+            </div>
+              <div class="row">
+                <div class="col-xs-3">驾驶人姓名:</div>
+                <div class="col-xs-9  pull-left">{{ model.name }}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-3">车牌号码:</div>
+                <div class="col-xs-9 pull-left">{{ model.place }}{{ model.carId }}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-3">手机号码:</div>
+                <div class="col-xs-9 pull-left">{{ model.phoneNum }}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-3">驾驶证号:</div>
+                <div class="col-xs-9 pull-left">{{ model.carCardId }}</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">投保公司:</div>
+                <div class="col-xs-9 pull-left">{{ model.insuranceCompany }}</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3">责任:</div>
+                <div class="col-xs-9 pull-left">{{ result2 }}</div>
+              </div>
+              <br>
+            </div>
+      </ion-card-content>
+    </ion-card>
+
+<button ion-button full color="secondary" (click)="toOnlineReporting()">确认</button>
+
+
+
+</ion-content>

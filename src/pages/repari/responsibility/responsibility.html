@@ -1,0 +1,71 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-title>责任认定</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+      <ion-card-header text-center class="aa">
+          本驾驶人选择
+      </ion-card-header>
+      <ion-card-content>
+
+<ion-list radio-group>
+  <ion-list-header>
+    我认为对方应负:
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>无责</ion-label>
+    <ion-radio checked="true" value="0" (click)="onChoice(0)"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>同责</ion-label>
+    <ion-radio value="1" (click)="onChoice(1)"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>全责</ion-label>
+    <ion-radio value="2" (click)="onChoice(2)"></ion-radio>
+  </ion-item>
+</ion-list>
+
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header text-center class="bb">
+          对方驾驶人选择
+      </ion-card-header>
+      <ion-card-content>
+
+<ion-list radio-group>
+  <ion-list-header>
+    我认为对方应负:
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>无责</ion-label>
+    <ion-radio checked="true" value="0" (click)="onChoice2(0)"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>同责</ion-label>
+    <ion-radio value="1" (click)="onChoice2(1)"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>全责</ion-label>
+    <ion-radio value="2" (click)="onChoice2(2)"></ion-radio>
+  </ion-item>
+</ion-list>
+
+      </ion-card-content>
+    </ion-card>
+
+<button ion-button outline color="danger" type="button" (click)="negotiationResult(0)">有争议</button>
+<button ion-button outline color="primary" type="button" (click)="negotiationResult(1)">无争议</button>
+
+
+</ion-content>

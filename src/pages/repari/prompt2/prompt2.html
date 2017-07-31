@@ -1,0 +1,40 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-fab color="primary" mini (click)="doExplain()">
+        <ion-icon name="help" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>事故处理-温馨提示-责任判断</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+     <ion-item>
+      
+      <p><ion-icon name="eye" color="danger"></ion-icon>
+      有以下情形之一的,驾驶人应
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;立即报警,在现场等候交通警
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;察处理,无以下情况继续处理.</p>
+    </ion-item>
+    <ion-item>
+      <p><ion-icon name="alert"></ion-icon>任意一方车辆无号牌</p>
+      <br/>
+      <p><ion-icon name="alert"></ion-icon>任意一方驾驶人无驾驶证</p>
+      <br/>
+      <p><ion-icon name="alert"></ion-icon>任意一方驾驶人有饮酒嫌疑</p>
+      <br/>
+      <p><ion-icon name="alert"></ion-icon>任意一方有人员伤亡</p>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="toStart()">继续处理</button>
+  </div>
+  <div padding>
+    <button ion-button color="light" block (click)="showAlert()">立即报警</button>
+  </div>
+</ion-content>

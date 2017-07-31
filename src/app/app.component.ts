@@ -1,3 +1,4 @@
+import { HomePage } from './../pages/home/home';
 
 import { BasicPage } from './../pages/slides/basic/pages';
 import { Component } from '@angular/core';
@@ -47,7 +48,7 @@ loginStatusService.getFirstInStatus().then((status)=>{
               console.log("已登录");
           console.log(value);
               this.helper.setAlias(''+value);
-              this.rootPage=TabsPage;
+              this.rootPage=HomePage;
             })
             )
          }

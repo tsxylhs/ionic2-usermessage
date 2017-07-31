@@ -1,0 +1,31 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-title>责任认定结果</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+
+    <ion-list radio-group>
+      <ion-list-header color="primary">
+        远程认定结果:
+      </ion-list-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label>前者:{{result1}}</ion-label>
+        </ion-item>
+         <ion-item>
+          <ion-label>后者:{{result2}}</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-list>
+    </ion-card>
+
+
+<button ion-button outline color="danger" type="button" (click)="guiResult()">认可,去签字</button>
+<button ion-button outline color="primary" type="button">不认可,联系交警(请拨打122)</button>
+
+
+</ion-content>

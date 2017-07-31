@@ -1,0 +1,16 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-title>事故情形认定</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+ <button ion-button block (click)="doRadio()">点击选择事故类型</button>
+<!--这里添加一个文本框-->
+ <ion-item class="descripts">
+  <ion-label stacked>详细描述</ion-label>
+  <ion-textarea [(ngModel)]="describe" ></ion-textarea>
+</ion-item>
+ <button ion-button block (click)="tofileTwoInfoPage()">确认选择</button>
+</ion-content>

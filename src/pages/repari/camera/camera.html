@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>拍照取证</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <div style=" width:100%; text-align:left; margin-left:15px; margin-right:15px;">
+             <hr class="hrLine" style="width:35%;"/>  证件照  <hr class="hrLine" style="width:35%;"/>
+    </div>
+      <ion-row>
+        <ion-col>
+         <img [src]="avatarPath7" (click)="getPicture(1,7)"><br>
+        己方行驶证照片<ion-icon name="wenhao" color="primary" (click)="doexplain(7)"></ion-icon>
+        </ion-col>
+        <ion-col>
+         <img [src]="avatarPath8" (click)="getPicture(1,8)"><br>
+        己方驾驶证照片<ion-icon name="wenhao" color="primary" (click)="doexplain(8)"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+         <img [src]="avatarPath9" (click)="getPicture(1,9)"><br>
+      对方行驶证照片<ion-icon name="wenhao" color="primary" (click)="doexplain(9)"></ion-icon>
+        </ion-col>
+        <ion-col>
+         <img [src]="avatarPath10" (click)="getPicture(1,10)"><br>
+      对方驾驶证照片<ion-icon name="wenhao" color="primary" (click)="doexplain(10)"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div style=" width:100%; text-align:left; margin-left:15px; margin-right:15px;">
+             <hr class="hrLine" style="width:35%;"/>  事故照  <hr class="hrLine" style="width:35%;"/>
+      </div>
+      <ion-row>
+        <ion-col>
+         <img [src]="avatarPath" (click)="getPicture(1,1)"><br>
+      侧前方照片<ion-icon name="wenhao" color="primary" (click)="doexplain(1)"></ion-icon>
+        </ion-col>
+        <ion-col>
+         <img [src]="avatarPath2" (click)="getPicture(1,2)"><br>
+      侧后方照片<ion-icon name="wenhao" color="primary" (click)="doexplain(2)"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+           <img [src]="avatarPath3" (click)="getPicture(1,3)"><br>
+           本方车全景照片<ion-icon name="wenhao" color="primary" (click)="doexplain(3)"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <img [src]="avatarPath4" (click)="getPicture(1,4)"><br>
+          对方车全景照片<ion-icon name="wenhao" color="primary" (click)="doexplain(4)"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <img [src]="avatarPath5" (click)="getPicture(1,5)"><br>
+          碰撞部位照片<ion-icon name="wenhao" color="primary" (click)="doexplain(5)"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <img [src]="avatarPath6" (click)="getPicture(1,6)"><br>
+          其他现场照片<ion-icon name="wenhao" color="primary" (click)="doexplain(6)"></ion-icon>
+        </ion-col>
+      </ion-row>
+   </ion-grid>
+    <button ion-button full (click)="firstStepOk()">
+        取证完成
+    </button>
+</ion-content>

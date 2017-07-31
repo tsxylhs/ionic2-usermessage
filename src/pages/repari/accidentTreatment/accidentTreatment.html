@@ -1,0 +1,35 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-fab color="primary" mini (click)="doExplain()">
+        <ion-icon name="help" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>事故处理-处理流程</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      
+      <p><ion-icon name="eye" color="danger"></ion-icon>
+      请按照如下流程处理事故,点击
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:red;">[拍照取证]</i>&nbsp;开启新案件流程</p>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="secondary" block (click)="showConfirm()">拍照取证</button>
+  </div>
+  <div padding>
+    <button ion-button color="primary" block (click)="showAlert()">责任认定</button>
+  </div>
+  <div padding>
+    <button ion-button color="danger" block (click)="showAlert()">保险报案</button>
+  </div>
+
+</ion-content>

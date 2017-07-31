@@ -1,0 +1,36 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-fab color="primary" mini (click)="doExplain()">
+        <ion-icon name="help" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>事故处理-温馨提示</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-divider color="light" text-center>温馨提示</ion-item-divider>
+
+
+    <ion-item>
+
+      <p><ion-icon name="alert"></ion-icon>发生交通事故后,请您立即开启
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;危险报警闪光灯</p>
+      <br/>
+      <p><ion-icon name="alert"></ion-icon>夜间还需开启示廊灯和后位灯</p>
+      <br/>
+      <p><ion-icon name="alert"></ion-icon>请在车后方放置警示牌</p>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="toStart()">事故处理</button>
+  </div>
+  <div padding>
+    <button ion-button color="light" block>历史案件</button>
+  </div>
+</ion-content>

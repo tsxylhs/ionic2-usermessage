@@ -1,0 +1,29 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-title>双方签名确认</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+      <ion-card-header text-center class="aa">
+          本方驾驶人签名
+      </ion-card-header>
+      <ion-card-content>
+          <my-signaturePad></my-signaturePad>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header text-center class="bb">
+          对方驾驶人签名
+      </ion-card-header>
+      <ion-card-content>
+         <my-signaturePad></my-signaturePad>
+      </ion-card-content>
+    </ion-card>
+
+<button ion-button full color="secondary" (click)="toAOfL()">确认生成责任事故书</button>
+
+
+
+</ion-content>

@@ -1,3 +1,54 @@
 page-home {
 
+
+.ion-fab_1{
+   // color: red;
+    font-size: 19px;//字体
+    //color: lightcoral;
+    color:#000080;
+    min-width: 180px;
+    min-height: 180px;
+    background-color: aqua;//背景颜色
+    box-shadow:4px 4px 5px #888; //设置阴影
+    //padding-block-end: 60px;//文字的位置
+    //border: solid 1px aquamarine;//边框颜色
+    margin-left: 20%;
+}
+
+.ion_grid_1{
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+.ion_grid_1 ion-row:nth-child(1) {
+    border-bottom: 1px solid black;
+    box-shadow: 1px 1px 1px #888;
+}
+ .ion_grid_1 ion-row ion-col{
+     background-color:palegreen;
+ }
+.ion_grid_1 ion-row ion-col:nth-child(1){
+    border-right: 1px solid #2F4F4F;
+    box-shadow: 1px 1px 1px #888;
+    align-self: center;
+}
+.ion_grid_1 ion-row ion-col:nth-child(2){
+    border-right: 2px solid white;
+    box-shadow: 1px 1px 1px #888;
+}
+
+.ion-icon_1{
+    font-size: 25px;
+    //color:palevioletred;
+    //color:#000080;
+    color:#6A5ACD;
+    text-align:center;
+    padding-left: 10%;
+}
+.ion-icon_1 p{
+    font-size: 20px;
+    color: #696969;
+}
+.div1{
+  background-image: "../../assets/img/advance-card-london.jpg"
+}
 }

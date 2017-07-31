@@ -1,0 +1,40 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-title>确认保险公司</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!--
+   <form>
+     <div class="form-group">
+        <label for="insuranceCompany">投保公司:</label><br>
+        <select class="form-control" id="insuranceCompany"
+        required
+         [(ngModel)]="insuranceCompany" name="insuranceCompany">
+          <option *ngFor="let ins of insuranceCompany" [value]="ins">{{ins}}</option>
+        </select>
+      </div>
+      <button ion-button clear type="submit">核对信息</button>
+   </form>
+   -->
+
+   <br>
+    <ion-card>
+
+  <ion-card-header text-center style="background-color:gray;">
+    确认投保公司
+  </ion-card-header>
+
+  <ion-card-content>
+    <br>
+    <label ><h2><b>投保公司:</b></h2><b>&nbsp;&nbsp;&nbsp;&nbsp;{{insc}}</b></label>
+    <ion-icon name="create" class="ion-icon_1" (click)="presentActionSheet()"></ion-icon>
+    [自动生成我的位置],
+    [搜索附近最近的理赔点]
+  </ion-card-content>
+</ion-card>
+<br>
+<button ion-button block type="submit" (click)="toend()">确认选择</button>
+
+</ion-content>

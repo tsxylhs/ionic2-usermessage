@@ -1,0 +1,28 @@
+<ion-header text-center>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-fab color="primary" mini (click)="doExplain()">
+        <ion-icon name="help" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>事故处理-事故类型</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+  <div padding>
+    <img [src]="avatarPath7"><br>
+    <button ion-button color="primary" block (click)="accType(1)">多车事故</button>
+  </div>
+  <div padding>
+    <img [src]="avatarPath8"><br>
+    <button ion-button color="primary" block (click)="accType(2)">单车事故</button>
+  </div>
+  <div>
+    <p style="color:red;">注意:拍照时请在保证安全下拍摄</p>
+  </div>
+
+</ion-content>
