@@ -3,8 +3,10 @@ page-home {
 
 .ion-fab_1{
    // color: red;
+
+
     font-size: 19px;//字体
-    //color: lightcoral;
+   background: url("../../assets/img/card-amsterdam.png");
     color:#000080;
     min-width: 180px;
     min-height: 180px;
@@ -12,7 +14,9 @@ page-home {
     box-shadow:4px 4px 5px #888; //设置阴影
     //padding-block-end: 60px;//文字的位置
     //border: solid 1px aquamarine;//边框颜色
-    margin-left: 20%;
+    margin:0 auto;
+
+
 }
 
 .ion_grid_1{
@@ -24,7 +28,7 @@ page-home {
     box-shadow: 1px 1px 1px #888;
 }
  .ion_grid_1 ion-row ion-col{
-     background-color:palegreen;
+    // background-color:palegreen;
  }
 .ion_grid_1 ion-row ion-col:nth-child(1){
     border-right: 1px solid #2F4F4F;
@@ -49,6 +53,10 @@ page-home {
     color: #696969;
 }
 .div1{
-  background-image: "../../assets/img/advance-card-london.jpg"
+     padding-top: 5%;
+  background:url("../../assets/img/advance-card-london.jpg") no-repeat  center center ;
+  background-size: cover;
 }
+
+
 }

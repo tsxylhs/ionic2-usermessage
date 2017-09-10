@@ -1,7 +1,7 @@
 
-import {Observable} from "rxjs";
+
 import {Injectable} from '@angular/core';
-import {Http, Response, Headers,RequestOptionsArgs,RequestOptions, RequestMethod} from '@angular/http';
+import {Http} from '@angular/http';
 
 import {serviceIP} from './config';
 

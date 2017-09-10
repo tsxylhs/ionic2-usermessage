@@ -1,5 +1,9 @@
+import { HttpService } from './../../../providers/httpService';
+import { LoginStatusService } from './../../../providers/login-statusService';
 import { Component } from '@angular/core';
-import { IonicPage, ViewController ,NavController, NavParams } from 'ionic-angular';
+import { ViewController ,NavController, NavParams } from 'ionic-angular';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 import { NativeService } from "../../../providers/NativeService";
 import { DEFAULT_AVATAR } from "../../../providers/Constants";
 import { DEFAULT_AVATAR2 } from "../../../providers/Constants";
@@ -11,17 +15,15 @@ import { DEFAULT_AVATAR11 } from "../../../providers/Constants";
 import { DEFAULT_AVATAR9 } from "../../../providers/Constants";
 import { AlertController } from "ionic-angular";
 import { moveTheCarPage } from "../moveTheCar/moveTheCar";
-/**
- * Generated class for the CameraPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { fileTwoInfoPage } from '../fileTwoInfo/fileTwoInfo';
+import { serviceIP } from '../../../providers/config';
+
 //@IonicPage()
 @Component({
   selector: 'page-camera',
   templateUrl: 'camera.html',
 })
+
 export class CameraPage {
   isChange:boolean = false;//头像是否改变
   avatarPath:string = DEFAULT_AVATAR;
@@ -34,7 +36,7 @@ export class CameraPage {
   avatarPath8:string = DEFAULT_AVATAR11;
   avatarPath9:string = DEFAULT_AVATAR9;
   avatarPath10:string = DEFAULT_AVATAR11;
-
+  userID:string;
   imageBase64:string;
 
   constructor(
@@ -42,37 +44,25 @@ export class CameraPage {
     private viewCtrl:ViewController,
     private navParams:NavParams,
     private nativeService:NativeService,
-    private alertCtrl : AlertController
+    private alertCtrl : AlertController,
+    private transfer: FileTransfer,
+    private file: File,
+    private HttpService:HttpService,
+    private FileTransferObject:FileTransferObject,
+    private LoginStatusService:LoginStatusService
     ) {
       //this.avatarPath = navParams.get('avatarPath');
+       this.LoginStatusService.getUserID().then((value)=>{
+           this.userID=value;
+            })
+
   }
+
   /**
  * 调用本地摄像机
  * @param type 用户的选择 1 直接拍照 ！1 用户从手机相册中选择
  */
 
-//start1
-/*
-  getPicture(type) {//1拍照,0从图库选择
-    let options = {
-      targetWidth: 256,
-      targetHeight: 256
-    };
-
-    if (type == 1) {
-      this.nativeService.getPictureByCamera(options).then(imageBase64 => {
-        this.getPictureSuccess(imageBase64);
-      });
-
-    }
-    //从相册中选
-    else{
-      this.nativeService.getPictureByPhotoLibrary({}).then(imageBase64 => {
-        this.getPictureSuccess(imageBase64);
-      });
-    }
-  }
-*/
 getPicture(type,num) {//1拍照,0从图库选择
     let options = {
       targetWidth: 256,
@@ -133,6 +123,7 @@ getPicture(type,num) {//1拍照,0从图库选择
     this.imageBase64 = <string>imageBase64;
     if(num == 1){
       this.avatarPath = 'data:image/jpg;base64,' + imageBase64;
+      console.log(this.avatarPath);
     }else if(num == 2){
       this.avatarPath2 = 'data:image/jpg;base64,' + imageBase64;
     }else if(num == 3){
@@ -152,6 +143,7 @@ getPicture(type,num) {//1拍照,0从图库选择
     }else if(num == 10){
       this.avatarPath10 = 'data:image/jpg;base64,' + imageBase64;
     }
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CameraPage');
@@ -233,6 +225,57 @@ getPicture(type,num) {//1拍照,0从图库选择
   }
 
   firstStepOk(){
-   this.navCtrl.push(moveTheCarPage);
+
+let message={
+ userID:this.userID,
+ driveme:this.avatarPath7,
+ driveme2:this.avatarPath8,
+ driveyou:this.avatarPath9,
+ driveyou2:this.avatarPath10,
+ qian:this.avatarPath,
+hou:this.avatarPath2,
+quanjing1:this.avatarPath3,
+quanjing2:this.avatarPath4,
+pengzhuang:this.avatarPath5,
+qita:this.avatarPath6
+}
+this.HttpService.post('shuangfang', message).subscribe(
+      data => {
+ if(data.success === 1){
+      alert("上传成功！")
+      this.navCtrl.push(moveTheCarPage);
+ }
+else{
+  alert("上传失败请检查网络")
+}
+ }
+ )
+
+
+
+
+
+
+
+
+  //    const fileTransfer: FileTransferObject = this.transfer.create();
+  //    console.log(this.avatarPath);
+  //   var options:any;
+
+  //   var url;
+  //   url=serviceIP+"oneimages";
+  //  fileTransfer.upload(this.avatarPath,url,options).then((data)=>{
+  //    alert("正在上传");
+
+  //  this.navCtrl.push(moveTheCarPage);
+  //  },(err)=>{
+  //    alert("上传失败");
+  //  })
+
+
+
+
+
+
   }
 }

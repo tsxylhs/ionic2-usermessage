@@ -1,6 +1,8 @@
+import { HttpService } from './../../../providers/httpService';
 
 import { Component, ViewChild  } from '@angular/core';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
+import { HttpService } from '../../../providers/httpService';
 
 @Component({
   selector: 'my-signaturePad',
@@ -17,7 +19,10 @@ export class SignaturePadPage{
     'canvasHeight': 300
   };
 
-  constructor() {
+  constructor(
+    private HttpService:HttpService
+  )
+   {
     // no-op
   }
 
@@ -29,7 +34,23 @@ export class SignaturePadPage{
 
   drawComplete() {
     // will be notified of szimek/signature_pad's onEnd event
-    console.log(this.signaturePad.toDataURL());
+   // console.log(this.signaturePad.toDataURL());
+    let data={
+     imagedata:this.signaturePad.toDataURL()
+    }
+ this.HttpService.post("qianming",data).subscribe(
+   data=>{
+           if(data.success===1){
+             alert("上传成功")
+           }
+           else{
+             alert("上传失败")
+           }
+
+
+   }
+ )
+
   }
 
   drawStart() {

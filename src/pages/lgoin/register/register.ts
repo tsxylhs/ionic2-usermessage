@@ -3,7 +3,6 @@ import { NavController, ViewController, AlertController } from 'ionic-angular';
 import {FormBuilder, Validators} from '@angular/forms';
 import { LoginPage } from '../login';
 import { HttpService } from '../../../providers/httpService';
-import{  $  }             from 'jquery';
 
 
 @Component({
@@ -12,27 +11,46 @@ import{  $  }             from 'jquery';
 })
 export class RegisterPage {
   RegisterForm: any;
-
+   checknumber:string;
 
   constructor(public NavController: NavController,
               private HttpService:HttpService,
               private viewCtrl: ViewController,
-
               private AlertController:AlertController,
+
               private formBuilder: FormBuilder) {
     this.RegisterForm = this.formBuilder.group({
       phone: [, [Validators.required, Validators.minLength(11), Validators.pattern('1[0-9]{10}')]],
-      verificationCode: [, [Validators.required, Validators.minLength(6), Validators.pattern('[0-9]{6}')]],
+      verificationCode: [, [Validators.required, Validators.minLength(6), Validators.bind(this.checknumber)]],
       Password: [, [Validators.required, Validators.minLength(6)]],
       //Password1:[, [this.RegisterForm.controls['Password']!=this.RegisterForm.controls['Password1'], Validators.required, Validators.minLength(6)]]
     });
   };
 
 getTestCode(){}
-pushNotificationChange(){
+pushNotificationChange(value){
   //HTTP请求
-  alert("已发送");
+alert("已发送"+value.phone)
+let user={
+      phoneNumber:value.phone
+   }
+this.HttpService.post('messagecheck',user).subscribe(
+  data=>{
+     if(data.success===1){
+      console.log(data);
+this.checknumber=data.checknumber;
+          console.log("拿到验证码了");
+      }else{
+        console.log('没有拿到');
+       this.showAlert();
+      }
+    },
+    error => {
+      this.showAlert();
+      console.log(error);
+}
 
+)
 }
   register(value) {
 
@@ -44,6 +62,7 @@ pushNotificationChange(){
  this.HttpService.post('userregister',user).subscribe(
   data=>{
      if(data.success===1){
+      console.log(data);
 
           console.log("我进来了");
         this.NavController.push(LoginPage);

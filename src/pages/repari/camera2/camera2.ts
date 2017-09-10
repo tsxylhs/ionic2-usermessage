@@ -1,3 +1,5 @@
+import { HttpService } from './../../../providers/httpService';
+import { LoginStatusService } from './../../../providers/login-statusService';
 import { moveTheCar2Page } from './../moveTheCar2/moveTheCar2';
 import { Component } from '@angular/core';
 import { IonicPage, ViewController ,NavController, NavParams } from 'ionic-angular';
@@ -9,7 +11,6 @@ import { DEFAULT_AVATAR6 } from "../../../providers/Constants";
 import { DEFAULT_AVATAR11 } from "../../../providers/Constants";
 import { DEFAULT_AVATAR9 } from "../../../providers/Constants";
 import { AlertController } from "ionic-angular";
-
 
 @Component({
   selector: 'page-camera2',
@@ -23,7 +24,7 @@ export class Camera2Page {
   avatarPath6:string = DEFAULT_AVATAR6;
   avatarPath7:string = DEFAULT_AVATAR9;
   avatarPath8:string = DEFAULT_AVATAR11;
-
+  userID:string;
 
   imageBase64:string;
 
@@ -31,10 +32,15 @@ export class Camera2Page {
     private navCtrl: NavController,
     private viewCtrl:ViewController,
     private navParams:NavParams,
+    private HttpService:HttpService,
     private nativeService:NativeService,
-    private alertCtrl : AlertController
+    private alertCtrl : AlertController,
+    private LoginStatusService:LoginStatusService
     ) {
       //this.avatarPath = navParams.get('avatarPath');
+       this.LoginStatusService.getUserID().then((value)=>{
+           this.userID=value;
+            })
   }
 
 getPicture(type,num) {//1拍照,0从图库选择
@@ -145,6 +151,22 @@ getPicture(type,num) {//1拍照,0从图库选择
   }
 
   firstStepOk(){
+  let message={
+ userID:this.userID,
+ driveme:this.avatarPath7,
+ driveme2:this.avatarPath8,
+ qian:this.avatarPath,
+hou:this.avatarPath2,
+pengzhuang:this.avatarPath5,
+qita:this.avatarPath6
+}
+this.HttpService.post('avatar', message).subscribe(
+      data => {
+      console.log('hah');
+ }
+ )
+
+
     this.navCtrl.push(moveTheCar2Page);
   }
 }

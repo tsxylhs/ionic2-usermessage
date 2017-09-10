@@ -1,7 +1,9 @@
+import { HttpService } from './../../../providers/httpService';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { fileTwoInfoPage } from "../fileTwoInfo/fileTwoInfo";
+import { LoginStatusService } from '../../../providers/login-statusService';
 
 @Component({
   selector: 'page-accidentSituation',
@@ -11,8 +13,18 @@ export class accidentSituationPage {
   testRadioOpen: boolean;
   testRadioResult;//结果
   describe : string;//详细描述
+  userID:string;
   constructor(public alerCtrl: AlertController,
-             public navCtrl : NavController) { }
+             private HttpService:HttpService,
+             public navCtrl : NavController,
+             private LoginStatusService:LoginStatusService
+             ) {
+
+this.LoginStatusService.getUserID().then((value)=>{
+           this.userID=value;
+            })
+
+             }
 
   doRadio() {
     let alert = this.alerCtrl.create();
@@ -89,8 +101,25 @@ export class accidentSituationPage {
   }
 
   tofileTwoInfoPage(){
+    console.log(this.describe+""+this.testRadioResult)
+    let message={
+           useID :this.userID,
 
+           sglx:this.testRadioResult,
+           sgsm:this.describe
+    }
     this.navCtrl.push(fileTwoInfoPage);
-  }
+
+ this.HttpService.post('miaoshu',message).subscribe(
+      data => {
+        if(data.success===1){
+          this.navCtrl.push(fileTwoInfoPage);
+        }
+        else{
+        alert("上传失败");
+        }
+ })
+
+}
 }
 

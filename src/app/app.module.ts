@@ -50,6 +50,8 @@ import { guidanceResultPage } from '../pages/repari/guidanceResult/guidanceResul
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 import { choseCompComponent } from '../pages/repari/choseComp/choseComp';
 import { moveTheCar2Page } from '../pages/repari/moveTheCar2/moveTheCar2';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { uncontestedSignaturePage1 } from '../pages/repari/uncontestedSignature1/uncontestedSignature';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,7 @@ import { moveTheCar2Page } from '../pages/repari/moveTheCar2/moveTheCar2';
     guidanceResultPage,
     guidanceRespPage,
     uncontestedSignaturePage,
+    uncontestedSignaturePage1,
     SignaturePad,
     SignaturePadPage,
      agreementOfLiabilityPage,
@@ -124,6 +127,7 @@ import { moveTheCar2Page } from '../pages/repari/moveTheCar2/moveTheCar2';
       guidanceResultPage,
     guidanceRespPage,
     uncontestedSignaturePage,
+    uncontestedSignaturePage1,
     SignaturePad,
     SignaturePadPage,
      agreementOfLiabilityPage,
@@ -146,6 +150,8 @@ import { moveTheCar2Page } from '../pages/repari/moveTheCar2/moveTheCar2';
           Toast,
           File,
           ImagePicker,
+          FileTransfer,
+          FileTransferObject,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

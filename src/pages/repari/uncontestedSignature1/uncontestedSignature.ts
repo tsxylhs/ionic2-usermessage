@@ -1,18 +1,18 @@
 
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
-import { uncontestedSignaturePage1 } from '../uncontestedSignature1/uncontestedSignature';
+//import { SignaturePadPage } from "../signaturePad/signaturePad";
+import { agreementOfLiabilityPage } from "../agreementOfLiability/agreementOfLiability";
 @Component({
   selector: 'page-uncontestedSignature',
   templateUrl: 'uncontestedSignature.html'
 })
-export class uncontestedSignaturePage {
+export class uncontestedSignaturePage1 {
   constructor(public navCtrl: NavController) {
 
   }
 
   toAOfL(){
-    this.navCtrl.push(uncontestedSignaturePage1);
+    this.navCtrl.push(agreementOfLiabilityPage);
   }
 }

@@ -24,7 +24,11 @@ export class LoginPage {
   loginForm:FormGroup;
   username:any;
   password:any;
-  constructor(public loginStatusService:LoginStatusService, public Helper:Helper, public alertCtrl: AlertController,public modalController: ModalController,public navCtrl: NavController, private formBuilder:FormBuilder,public httpService: HttpService) {
+  constructor(public loginStatusService:LoginStatusService, public Helper:Helper,
+  public alertCtrl: AlertController,public modalController: ModalController,
+  public navCtrl: NavController,
+   private formBuilder:FormBuilder,
+  public httpService: HttpService) {
    this.loginForm=formBuilder.group({
       username: ['', Validators.compose([Validators.minLength(11), Validators.maxLength(11), Validators.required, Validators.pattern("^(13[0-9]|15[012356789]|17[03678]|18[0-9]|14[57])[0-9]{8}$")])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
@@ -53,7 +57,7 @@ login(value) {
 
             this.Helper.setAlias(''+data.result[0]._id);
             this.loginStatusService.LogonSucc();
-            this.navCtrl.push(Mine,data.result[0]);
+            this.navCtrl.push(HomePage,data.result[0]);
 
 
       }else{
